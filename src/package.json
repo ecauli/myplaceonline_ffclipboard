@@ -1,0 +1,10 @@
+{
+  "name": "ffclipboard",
+  "title": "ffclipboard",
+  "id": "jid1-Dyauf8nGEA75pg",
+  "description": "Expose Firefox Add-On SDK's clipboard",
+  "author": "kevin@myplaceonline.com",
+  "license": "MIT",
+  "version": "0.1",
+  "homepage": "https://github.com/myplaceonline/myplaceonline_ffclipboard"
+}

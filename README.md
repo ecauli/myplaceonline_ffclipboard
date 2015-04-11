@@ -19,3 +19,11 @@ Once this Add-On is installed into Firefox >= 34, every page has an additional `
         }
       });
     }
+
+## Development
+
+```
+$ source bin/activate
+$ cfx run
+$ cfx xpi
+```

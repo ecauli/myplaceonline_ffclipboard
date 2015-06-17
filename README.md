@@ -25,7 +25,11 @@ Once this Add-On is installed into Firefox >= 34, every page has an additional `
 ## Development
 
 ```
-$ source ${ADDONSDK}/bin/activate
+$ cd src
+$ export PATH=${ADDONSDK}/bin/:$PATH
+$ activate
 $ cfx run
+
+# To build an XPI:
 $ cfx xpi
 ```

@@ -5,6 +5,6 @@
   "description": "Expose Firefox Add-On SDK's clipboard",
   "author": "kevin@myplaceonline.com",
   "license": "MIT",
-  "version": "0.1",
+  "version": "0.2",
   "homepage": "https://github.com/myplaceonline/myplaceonline_ffclipboard"
 }

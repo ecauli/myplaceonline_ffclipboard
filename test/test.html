@@ -7,7 +7,6 @@
       #results {
         border: 1px solid black;
         padding: 10px;
-        display: inline;
       }
 
       .success {
@@ -22,7 +21,7 @@
   <body>
     <h1>ffclipboard Test</h1>
     <p>The result of the test will be displayed in the box below:</p>
-    <div id="results">Loading...</div>
+    <span id="results">Loading...</span>
     <script>
       var results = document.getElementById("results");
       // Clear "Loading..."
@@ -33,7 +32,17 @@
       // Append result
       if (window.ffclipboard) {
         results.className = "success";
-        results.appendChild(document.createTextNode("Succeeded"));
+        results.appendChild(document.createTextNode("Succeeded "));
+        
+        // Create a button that actually tests ffclipoard
+        var testButton = document.createElement("button");
+        testButton.appendChild(document.createTextNode("Copy 'Hello World' to Clipboard"));
+        testButton.onclick = function() {
+          var str = "Hello World @ " + new Date();
+          window.ffclipboard.setText(str);
+          alert("Successfully copied to clipboard: " + str);
+        };
+        results.appendChild(testButton);
       } else {
         results.className = "failure";
         results.appendChild(document.createTextNode("Failed"));

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ffclipboard Test</title>
+    <meta charset="UTF-8">
+    <style>
+      #results {
+        border: 1px solid black;
+        padding: 10px;
+      }
+
+      .success {
+        background-color: green;
+      }
+
+      .failure {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ffclipboard Test</h1>
+    <p>The result of the test will be displayed in the box below:</p>
+    <span id="results">Loading...</span>
+    <script>
+      var results = document.getElementById("results");
+      // Clear "Loading..."
+      while (results.childNodes.length > 0) {
+        results.removeChild(results.childNodes[0]);
+      }
+
+      // Append result
+      if (window.ffclipboard) {
+        results.className = "success";
+        results.appendChild(document.createTextNode("Succeeded "));
+        
+        // Create a button that actually tests ffclipoard
+        var testButton = document.createElement("button");
+        testButton.appendChild(document.createTextNode("Copy 'Hello World' to Clipboard"));
+        testButton.onclick = function() {
+          var str = "Hello World @ " + new Date();
+          window.ffclipboard.setText(str);
+          alert("Successfully copied to clipboard: " + str);
+        };
+        results.appendChild(testButton);
+      } else {
+        results.className = "failure";
+        results.appendChild(document.createTextNode("Failed"));
+      }
+    </script>
+  </body>
+</html>

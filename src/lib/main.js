@@ -28,7 +28,7 @@ pageMod.PageMod({
         console.log("ffclipboard (main.js): setText called, setting clipboard");
       }
     
-      clipboard.set(str);
+      clipboard.set(str,"html");
 
       if (ffclipboard_debug) {
         console.log("ffclipboard (main.js): clipboard set returned");
